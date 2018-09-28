@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Welcome</title>
+	<meta charset="utf-8">
+	<meta name="welcome"content="width=device-width, initial-scale=1.0">
+<style>
+	body {
+   
+}
+h1 {
+    color: maroon;
+    margin-left: 50px;
+} 
+div {
+	display: inline-block;
+	background-color: {{color}};
+	width: 50px;
+	height: 50px;
+	margin: 25px;
+}
+</style>
+</head>
+<body>
+	<h1>Welcome!</h1>
+	{% for x in range(0,times): %}
+	<div></div>
+	<div></div>
+	<div></div>
+	{% endfor %}
+</body>
+</html>

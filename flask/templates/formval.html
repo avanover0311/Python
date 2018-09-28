@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Dojo Survey</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width = device-width, initial-scale =1">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+	<style>
+		form {
+			margin: 15px;
+		}
+		#name {
+			margin: 10px;
+			border: 2px solid black;
+		}
+		textarea {
+			border: 2px solid black;
+			margin: 15px;
+		}
+		.dropdown {
+			margin: 10px;
+		}
+
+	</style>
+</head>
+<body>
+  {% with messages = get_flashed_messages() %}
+    {% if messages %}
+      {% for message in messages %}
+        <p>{{message}}</p>
+      {% endfor %}
+    {% endif %}
+  {% endwith %}
+	<form action='/process', method='post'>
+    	Your Name:<input type="text" name="name" id="name">
+
+  	<div class="dropdown">
+  		<select class="custom-select" name="location">
+    		<option selected>Location...</option>
+    		<option value="1">San Jose</option>
+    		<option value="2">New York</option>
+    		<option value="3">Seattle</option>
+  		</select>
+	</div>
+
+	<div class="dropdown">
+		<select class="custom-select" name="language">
+    		<option selected>Language...</option>
+    		<option value="1">Python</option>
+    		<option value="2">Ruby</option>
+    		<option value="3">Javascript</option>
+  		</select>
+  	</div>
+	<textarea name="comment">
+		
+	</textarea>
+    	<button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+
+</body>
+</html>

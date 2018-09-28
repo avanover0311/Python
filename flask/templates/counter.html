@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Counter</title>
+	<meta charset="utf-8">
+	<meta name="counter">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+</head>
+
+<style>
+	h1 {
+		font: blue;
+	}
+	form {
+		margin: 15px;
+	}
+
+</style>
+<body>
+	<h1>Counter</h1>
+	<form action="/count" method="POST">
+		{{ session['num'] }} 
+		<input type="submit" value="Add 2">
+	</form>
+	<form action="/reset" method="POST">
+		<input type="submit" value="Reset">
+	</form>
+</body>
+</html>

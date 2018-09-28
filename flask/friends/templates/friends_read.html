@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Friends</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+</head>
+<body>
+  <style>
+    .information {
+      display: inline-block;
+      width: 680px;
+      padding: 10px;
+      text-align: center;
+      margin-left: 270px;
+     
+    }
+    h1 {
+      padding: 10px;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    button {
+      margin-left: 600px;
+    }
+    #firstname {
+      display: inline;
+      width: 170px;
+
+
+    }
+    #lastname {
+      display: inline-block;
+    }
+    #occupaation {
+      display: inline-block;
+    }
+    .form-group {
+      display: inline-block;
+      margin: 15px; 
+
+    }
+    #lname {
+      display: inline;
+    }
+    #fname {
+      display: inline;
+     
+    }
+  </style>
+  <h1>My Friends</h1>
+  
+<table class="table table-dark">
+  <thead>
+    <tr>
+     
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Occupation</th>
+    </tr>
+  </thead>
+  {% for i in friends %}
+  <tbody>
+    <tr>
+      <td>{{ i['first_name'] }}</td>
+      <td>{{ i['last_name'] }}</td>
+      <td>{{ i['occupation'] }}</td>
+    </tr>
+  </tbody>
+  {% endfor %}
+</table>
+
+<h1>Add a Friend!</h1>
+
+<form action='/create_friend' method='POST'>
+  <div class="form-group row">
+   <label for="inputfirstname" class="col-sm-2 col-form-label">First Name: </label>
+    <div class="col-sm-10" id="fname">
+      <input name="first_name" class="form-control" id="firstname" placeholder="First Name">
+    </div>
+  <div class="form-group row">
+    <label for="inputlastname" class="col-sm-2 col-form-label" id="lname">Last Name: </label>
+    <div class="col-sm-10">
+      <input name="last_name" class="form-control" id="lastname" placeholder="Last Name">
+    </div>
+  </div>
+   <div class="form-group row">
+    <label for="inputoccupation" class="col-sm-2 col-form-label">Occupation: </label>
+    <div class="col-sm-10">
+      <input name="occupation" class="form-control" id="occupation" placeholder="Occupation">
+    </div>
+  </div>
+  <button type="submit" class="btn btn-outline-success">Add</button>
+</form>
+
+
+</body>
+</html>
+
+

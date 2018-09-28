@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Users</title>
+	<meta charset="utf-8">
+	<meta name="users"content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+</head>
+<body>
+
+	<h1>Add a new user</h1>
+	<form action= 'create/' method='post'>
+	{% csrf_token %}
+
+    <div class="form-group">
+      <label for="firstname">First Name</label>
+      <input type="text" class="form-control" id="firstname" aria-describedby="emailHelp" placeholder="First Name" name="first_name">
+    </div>
+    <div class="form-group">
+      <label for="lastname">Last Name</label>
+      <input type="text" class="form-control" id="lastname" aria-describedby="emailHelp" placeholder="Last Name" name="last_name">
+    </div
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="text" class="form-control" id="email" placeholder="Email" name="email">
+    </div>
+    
+      <input type="submit" class="btn btn-primary">
+  </form>
+
+
+		<a href="{% url 'index' %}">Go Back</button>
+	
+
+
+
+
+</body>
+</html>

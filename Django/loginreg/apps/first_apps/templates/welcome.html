@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Welcome Page</title>
+	<meta charset="utf-8">
+	<meta name="login and registration"content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+</head>
+<body>
+<div><a href="{% url 'logout' id=user.id %}">Logout</a></div>
+	<h1>Welcome {{ user.first_name }}</h1>
+  <div>Quotes</div>
+  
+	{% for i in quotes %}
+  		
+    <textarea>{{ i.quote }} - {{ i.author }}
+      Posted by:{{ user.first_name }} 
+    </textarea>
+    <div><a href="{% url 'viewquotes' id=user.id%}">View</a></div>
+  {% endfor %}
+ 
+ 
+  <form action= "{% url 'addquote' id=user.id %}" method='post'>
+  {% csrf_token %}
+    <h4>Add a Quote</h4>
+     <div class="form-group">
+        <label for="author">Author</label>
+        <input type="text" class="form-control" id="author" aria-describedby="author" name="author">
+      </div>
+
+      <div class="form-group">
+        <label for="quote">Quote</label>
+        <input type="text" class="form-control" id="quote" aria-describedby="quote" name="quote">
+      </div>
+      <input type="submit" name="submit">
+    </form>
+</body>
+</html>
+
+
+
+</body>
+</html>

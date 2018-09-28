@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Time Display</title>
+</head>
+<body>
+<form action="/apps/create" method="post">
+  {% csrf_token %}
+  <p for="name">Current Date & Time: {{time}}</p>
+  
+</form>
+</body>
+</html>
+
+
+
